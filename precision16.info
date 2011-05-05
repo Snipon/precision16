@@ -1,0 +1,13 @@
+name = Precision 16
+description = 16 column version of precision
+core = 6.x
+engine = phptemplate
+
+;Panel layouts
+plugins[panels][layouts] = plugins/layouts
+plugins[panels][styles] = plugins/styles
+api[panels][styles][version] = 2
+
+;Stylesheets
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/grid.css
