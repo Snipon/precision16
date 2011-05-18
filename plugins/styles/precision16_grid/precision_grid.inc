@@ -1,7 +1,7 @@
 <?php
 
 $plugin = array(
-  'title' => t('precision16 grid'),
+  'title' => t('precision grid'),
   'description' => t('Wraps panels or panes in a grid.'),
   'render panel' => 'precision16_grid_render_panel',
   'render pane' => 'precision16_grid_render_pane',
@@ -40,17 +40,19 @@ function theme_precision16_grid_render_panel($display, $panel_id, $panes, $setti
  *
  * To save some markup, we merge our settings into the pane CSS settings.
  */
-function theme_precision16_grid_render_pane($content, $pane, $display) {
-  $attributes = precision16_grid_parse_settings($pane->style['settings']);
+
+//function theme_precision16_grid_render_pane($content, $pane, $display) {
+function theme_precision16_grid_render_pane($vars) {
+  $attributes = precision16_grid_parse_settings($vars['pane']->style['settings']);
   foreach ($attributes as $attribute => $value) {
-    if (empty($content->{"css_$attribute"})) {
-      $content->{"css_$attribute"} = $value;
+    if (empty($vars['content']->{"css_$attribute"})) {
+      $vars['content']->{"css_$attribute"} = $value;
     }
     else {
-      $content->{"css_$attribute"} .= ' ' . $value;
+      $vars['content']->{"css_$attribute"} .= ' ' . $value;
     }
   }
-  return theme('panels_pane', $content, $pane, $display);
+  return theme('panels_pane', $vars);
 }
 
 /**

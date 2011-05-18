@@ -1,11 +1,11 @@
 <?php
 
 $plugin = array(
-  'title' => t('Precision16 three columns'),
+  'title' => t('Precision three columns'),
   'theme' => 'precision16_column_three',
   'icon' => 'precision16-column-three.png',
   'category' => 'precision16',
-  'panels' => array(
+  'regions' => array(
     'header_alpha' => t('Header alpha'),
     'header_beta' => t('Header beta'),
     'main' => t('Main'),

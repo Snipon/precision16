@@ -1,20 +1,13 @@
 <?php
 
 /**
- * Implementation of theme_settings().
+ * Implements hook_form_FORM_ID_alter().
  */
-function phptemplate_settings($saved_settings) {
-  $defaults = array(
-    'precision_show_overlay' => 0,
-  );
-  // Merge the saved variables and their default values.
-  $settings = array_merge($defaults, $saved_settings);
-  $form['precision_show_overlay'] = array(
+function precision16_form_system_theme_settings_alter(&$form, &$form_state) {
+  $form['precision16_show_overlay'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show grid overlay'),
-    '#default_value' => $settings['precision_show_overlay'],
+    '#default_value' =>  theme_get_setting('precision16_show_overlay'),
     '#description' => t('Shows the precision grid debug overlay.'),
   );
-  // Return the additional form widgets
-  return $form;
 }

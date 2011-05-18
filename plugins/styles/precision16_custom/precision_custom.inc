@@ -1,7 +1,7 @@
 <?php
 
 $plugin = array(
-  'title' => t('precision16 custom style'),
+  'title' => t('Precision custom style'),
   'description' => t('Wraps panels or panes in a custom style.'),
   'render panel' => 'precision16_custom_render_panel',
   'render pane' => 'precision16_custom_render_pane',
@@ -16,9 +16,9 @@ $plugin = array(
   ),
   'default' => array(
     'prefix' => '',
-    'prefix_filter' => FILTER_FORMAT_DEFAULT,
+    'prefix_filter' => filter_default_format(),
     'suffix' => '',
-    'suffix_filter' => FILTER_FORMAT_DEFAULT,
+    'suffix_filter' => filter_default_format(),
   )
 );
 
